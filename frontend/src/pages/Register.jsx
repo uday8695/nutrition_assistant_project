@@ -35,20 +35,39 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="username" placeholder="Username" onChange={handleChange} required />
-        <input name="email" placeholder="Email" type="email" onChange={handleChange} required />
-        <input name="password" placeholder="Password" type="password" onChange={handleChange} required />
-        <input name="age" placeholder="Age" onChange={handleChange} />
-        <input name="gender" placeholder="Gender" onChange={handleChange} />
-        <input name="height" placeholder="Height (cm)" onChange={handleChange} />
-        <input name="weight" placeholder="Weight (kg)" onChange={handleChange} />
-        <input name="activityLevel" placeholder="Activity Level" onChange={handleChange} />
-        <button type="submit">Register</button>
-      </form>
-    </div>
+    <div className="register-container">
+  <div className="register-card">
+    <h2 className="register-title">Register</h2>
+    <form onSubmit={handleSubmit} className="register-form">
+      <label htmlFor="username">Username</label>
+      <input name="username" placeholder="Username" onChange={handleChange} required />
+
+      <label htmlFor="email">Email</label>
+      <input name="email" placeholder="Email" type="email" onChange={handleChange} required />
+
+      <label htmlFor="password">Password</label>
+      <input name="password" placeholder="Password" type="password" onChange={handleChange} required />
+
+      <label htmlFor="age">Age</label>
+      <input name="age" placeholder="Age" type="number" onChange={handleChange} />
+
+      <label htmlFor="gender">Gender</label>
+      <input name="gender" placeholder="Gender" onChange={handleChange} />
+
+      <label htmlFor="height">Height (cm)</label>
+      <input name="height" placeholder="Height (cm)" type="number" onChange={handleChange} />
+
+      <label htmlFor="weight">Weight (kg)</label>
+      <input name="weight" placeholder="Weight (kg)" type="number" onChange={handleChange} />
+
+      <label htmlFor="activityLevel">Activity Level</label>
+      <input name="activityLevel" placeholder="Activity Level" onChange={handleChange} />
+
+      <button type="submit" className="register-btn">Register</button>
+    </form>
+  </div>
+</div>
+
   );
 };
 

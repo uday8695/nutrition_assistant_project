@@ -45,32 +45,39 @@ const Login = () => {
   };
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '400px', margin: 'auto' }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="email"
-          placeholder="Email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          style={{ display: 'block', margin: '10px 0', width: '100%' }}
-        />
-        <input
-          name="password"
-          placeholder="Password"
-          type="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          style={{ display: 'block', margin: '10px 0', width: '100%' }}
-        />
-        <button type="submit" disabled={loading} style={{ width: '100%' }}>
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
-      </form>
-    </div>
+   <div className="login-container">
+  <div className="login-card">
+    <h2 className="login-title">Login</h2>
+    <form onSubmit={handleSubmit} className="login-form">
+      <label htmlFor="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        placeholder="Email"
+        type="email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
+
+      <label htmlFor="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        placeholder="Password"
+        type="password"
+        value={formData.password}
+        onChange={handleChange}
+        required
+      />
+
+      <button type="submit" className="login-btn" disabled={loading}>
+        {loading ? 'Logging in...' : 'Login'}
+      </button>
+    </form>
+  </div>
+</div>
+
   );
 };
 

@@ -60,6 +60,7 @@
   border-radius: 8px;
   border: none;
   background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+  background: 6366f1;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
@@ -69,6 +70,7 @@
 
 .register-button {
   background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+  background: 6366f1;
 }
 
 .login-button:hover,

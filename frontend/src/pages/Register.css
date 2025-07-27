@@ -1,25 +1,33 @@
 .register-container {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #e0e7ff;
+  padding: 2rem;
 }
 
 .register-card {
   background: #fff;
-  padding: 2rem 2.5rem;
+  padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(99,102,241,0.08);
-  min-width: 320px;
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.08);
+  width: 100%;
+  max-width: 600px; /* Increased for two-column layout */
 }
 
 .register-title {
   color: #6366f1;
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
   margin-bottom: 1.5rem;
+}
+
+.register-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem 1.5rem;
 }
 
 .register-form label {
@@ -32,24 +40,25 @@
 .register-form input {
   width: 100%;
   padding: 0.6rem 1rem;
-  margin-bottom: 1rem;
   border-radius: 8px;
   border: 1px solid #6366f1;
   font-size: 1rem;
   background: #f3f4f6;
+  box-sizing: border-box;
 }
 
+/* Button full width across both columns */
 .register-btn {
-  width: 100%;
-  padding: 0.7rem;
+  grid-column: 1 / -1;
+  padding: 0.75rem;
   border-radius: 8px;
   border: none;
-  background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+  background:6366f1 ;
   color: #fff;
   font-weight: bold;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
 }
 
 .register-btn:hover {
