@@ -3,7 +3,15 @@ const router = express.Router();
 const Food = require('../models/Food'); // your mongoose model
 const protect = require('../middleware/authMiddleware'); // for secured access
 
+const { getFoods } = require('../controllers/foodController');
+
+// router.get('/', async (req, res) => {
+//   const foods = await Food.find(); // This queries the foods collection
+//   res.json(foods);
+// });
+router.get('/', getFoods); // Remove 'protect' here
 // @route   POST /api/foods
+
 // @desc    Add a new food item
 // @access  Private (protected route)
 router.post('/', protect, async (req, res) => {

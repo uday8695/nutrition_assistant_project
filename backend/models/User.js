@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
   height: Number,
   weight: Number,
   activityLevel: String,
+  dailyGoal: { type: Number, default: 2000 }
 }, { timestamps: true });
 
 // Encrypt password before saving

@@ -1,0 +1,1 @@
+router.patch('/goal', protect, updateDailyGoal);
