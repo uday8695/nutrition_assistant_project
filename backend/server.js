@@ -25,6 +25,12 @@ app.use('/api/foods', foodRoutes);
 const protectedRoutes = require('./routes/protectedRoutes');
 app.use('/api/protected', protectedRoutes);
 
+const suggestionRoutes = require('./routes/suggestionRoutes');
+app.use('/api', suggestionRoutes);
+
+// ADD THIS LINE - Register assistant routes
+const assistantRoutes = require('./routes/assistantRoutes');
+app.use('/api', assistantRoutes);
 
 app.get('/', (req, res) => {
   res.send('Nutrition Assistant API running');

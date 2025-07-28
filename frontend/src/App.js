@@ -4,7 +4,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile'; // <-- import Profile page
-
+import NewPlan from './pages/NewPlan';
 function App() {
   return (
     <Router>
@@ -13,7 +13,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} /> {/* Add Profile route */}
+        <Route path="/profile" element={<Profile />} /> 
+        <Route path="/newplan" element={<NewPlan />} />
+
+{/* Add Profile route */}
       </Routes>
     </Router>
   );

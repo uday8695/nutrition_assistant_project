@@ -1,10 +1,26 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-const planSchema = new mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  startDate: Date,
-  endDate: Date,
-  meals: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Meal' }]
+const FoodSchema = new mongoose.Schema({
+  name: String,
+  grams: String
 });
 
-export default mongoose.model("DietPlan", planSchema);
+const DietPlanSchema = new mongoose.Schema({
+  userId: String,
+  userName: String,
+  age: Number,
+  height: Number,
+  weight: Number,
+  suggestion: String,
+  timing: String,
+  foods: [FoodSchema],
+  walk: String,
+  calorieIntake: Number,
+  weightGain: Number,
+  carbohydrateNeeds: String,
+  proteinNeeds: String,
+  bmi: Number,
+  date: { type: Date, default: Date.now }
+});
+
+module.exports = mongoose.model('DietPlan', DietPlanSchema);
