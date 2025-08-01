@@ -1,4 +1,6 @@
-/* Reset and base styles */
+/* =========================
+   Base & Reset
+   ========================= */
 body {
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
@@ -6,7 +8,9 @@ body {
   padding: 0;
 }
 
-/* Navbar styles */
+/* =========================
+   Navbar
+   ========================= */
 .navbar {
   background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
   color: #fff;
@@ -48,56 +52,38 @@ body {
   text-shadow: none;
 }
 
-/* Carousel styles */
+/* =========================
+   Carousel
+   ========================= */
 .carousel {
   width: 100%;
-  max-width: 700px;
+  max-width: 960px;
   margin: 2rem auto;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(99,102,241,0.08);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  border-radius: 12px;
   background: #fff;
-  position: relative;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .carousel-slide {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 220px;
-  gap: 1.5rem;
-  transition: background 0.3s;
-  animation: carouselScroll 12s linear infinite;
-}
-
-@keyframes carouselScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  display: inline-flex;
+  gap: 1rem;
 }
 
 .carousel-slide img {
-  height: 200px;
+  height: 180px;
   width: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(99,102,241,0.10);
-  object-fit: cover;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 3px solid #e0e7ff;
+  border: 2px solid #ddd;
 }
 
-.carousel-slide img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 8px 32px rgba(99,102,241,0.18);
-  border-color: #6366f1;
-}
 
-/* Remove carousel-controls and carousel-btn styles */
-.carousel-controls,
-.carousel-btn {
-  display: none !important;
-}
-
-/* Dashboard main styles */
+/* =========================
+   Dashboard Container
+   ========================= */
 .dashboard-container {
   max-width: 900px;
   margin: 2rem auto;
@@ -108,6 +94,9 @@ body {
   animation: fadeIn 0.8s;
 }
 
+/* =========================
+   Headings & Labels
+   ========================= */
 h2 {
   color: #6366f1;
   font-size: 2.2rem;
@@ -124,19 +113,12 @@ label {
   display: block;
 }
 
-input[type="date"] {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #6366f1;
-  font-size: 1rem;
-  margin-right: 1rem;
-  background: #f3f4f6;
-  color: #374151;
-  box-shadow: 0 2px 8px #6366f122;
-}
-
-select,
-input[type="number"] {
+/* =========================
+   Inputs & Buttons
+   ========================= */
+input[type="date"],
+input[type="number"],
+select {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1.5px solid #6366f1;
@@ -149,8 +131,13 @@ input[type="number"] {
   transition: border-color 0.2s;
 }
 
+input[type="date"] {
+  border: 1px solid #6366f1;
+}
+
+input[type="number"]:focus,
 select:focus,
-input[type="number"]:focus {
+input[type="date"]:focus {
   border-color: #fbbf24;
   outline: none;
 }
@@ -174,12 +161,9 @@ button:hover {
   transform: scale(1.05);
 }
 
-strong {
-  color: #f59e42;
-  font-weight: 700;
-}
-
-/* Card styles for summary/history */
+/* =========================
+   Card Styles
+   ========================= */
 .card {
   background: #f3f4f6;
   border-radius: 12px;
@@ -200,7 +184,9 @@ strong {
   color: #374151;
 }
 
-/* Slider styles */
+/* =========================
+   Slider Styles
+   ========================= */
 .slider {
   width: 100%;
   margin: 2rem 0;
@@ -216,7 +202,61 @@ input[type="range"] {
   box-shadow: 0 2px 8px #6366f122;
 }
 
-/* Responsive styles */
+/* =========================
+   Diet Assistance Section
+   ========================= */
+.diet-assistance-section {
+  background: #eafbe7;
+  border: 1px solid #b2e2b2;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.latest-diet-plan {
+  margin-top: 8px;
+}
+
+/* =========================
+   Meal Components
+   ========================= */
+.MealLogger, .DailySummary, .MealHistory, .WeeklyChart {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.05);
+}
+
+/* =========================
+   Button Group
+   ========================= */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+/* =========================
+   Animations
+   ========================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.dashboard-container h2,
+.dashboard-container .card-title {
+  animation: fadeIn 0.7s ease;
+}
+
+/* =========================
+   Responsive
+   ========================= */
 @media (max-width: 700px) {
   .dashboard-container {
     padding: 1rem;
@@ -232,7 +272,9 @@ input[type="range"] {
   }
 }
 
-/* Advanced text styles */
+/* =========================
+   Advanced Text Styles
+   ========================= */
 .dashboard-container p,
 .dashboard-container label {
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
@@ -247,33 +289,7 @@ input[type="range"] {
   border-radius: 6px;
 }
 
-/* Example for MealLogger, DailySummary, MealHistory, WeeklyChart */
-.MealLogger, .DailySummary, .MealHistory, .WeeklyChart {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 12px;
-  background: #f8fafc;
-  box-shadow: 0 2px 8px rgba(99,102,241,0.05);
-}
-
-/* Example for advanced button group */
-.button-group {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.button-group button {
-  flex: 1;
-}
-
-/* Example for advanced text animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-.dashboard-container h2,
-.dashboard-container .card-title {
-  animation: fadeIn 0.7s ease;
+strong {
+  color: #f59e42;
+  font-weight: 700;
 }

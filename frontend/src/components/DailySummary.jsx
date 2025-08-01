@@ -3,9 +3,12 @@ import API from '../services/api';
 import { FaFire, FaDrumstickBite, FaBreadSlice, FaTint } from 'react-icons/fa';
 import SummaryCard from './SummaryCard';
 
-const DailySummary = ({ date }) => {
+const DailySummary = ({ date, reloadFlag, onGoalCheck }) => {
   const [summary, setSummary] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [meals, setMeals] = useState([]);
+  const [dailyGoal, setDailyGoal] = useState(2000); // Example default goal
+  const [totalCalories, setTotalCalories] = useState(0);
 
   useEffect(() => {
     const fetchSummary = async () => {
@@ -18,14 +21,25 @@ const DailySummary = ({ date }) => {
           },
         });
         setSummary(res.data);
+        setMeals(res.data.meals || []);
       } catch (err) {
         console.error('Error fetching summary:', err.response?.data || err.message);
       } finally {
         setLoading(false);
       }
     };
+    
     if (date) fetchSummary();
-  }, [date]);
+  }, [date, reloadFlag]);
+
+  useEffect(() => {
+    const total = meals.reduce((acc, meal) => acc + (meal.calories || 0), 0);
+    setTotalCalories(total);
+
+    if (onGoalCheck) {
+      onGoalCheck(totalCalories >= dailyGoal); // This should be >=
+    }
+  }, [meals, dailyGoal, onGoalCheck, totalCalories]);
 
   if (loading) return <p>Loading summary...</p>;
 

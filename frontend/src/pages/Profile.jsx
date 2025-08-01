@@ -9,10 +9,10 @@ const Profile = () => {
     <div>
       {/* Navbar */}
       <div className="navbar">
-        <div className="navbar-logo">NutriAssist</div>
+        <div className="navbar-logo">NutriMate</div>
         <div className="navbar-links">
-          <a href="/">Home</a>
           <a href="/dashboard">Dashboard</a>
+          <a href="/newplan">Generate Diet Plan</a>
           <a href="/profile">Profile</a>
           <a href="/logout">Logout</a>
         </div>

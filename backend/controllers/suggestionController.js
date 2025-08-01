@@ -42,22 +42,25 @@ exports.suggestNutrition = (req, res) => {
 // Fixed function name to match route import
 exports.saveDietPlan = async (req, res) => {
   try {
-    const { userId, userName, age, height, weight, suggestions, bmi } = req.body;
+    const { userId, plan, date } = req.body;
+    if (!userId) {
+      return res.status(400).json({ error: 'userId is required' });
+    }
     const newPlan = new DietPlan({
       userId,
-      userName,
-      age,
-      height,
-      weight,
-      ...suggestions,
-      bmi
+      userName: req.body.userName,
+      age: req.body.age,
+      height: req.body.height,
+      weight: req.body.weight,
+      bmi: req.body.bmi,
+      ...plan, // Spread plan fields (suggestion, timing, foods, etc.)
+      date: date || new Date()
     });
-
-    const saved = await newPlan.save();
-    res.status(201).json(saved);
+    await newPlan.save();
+    res.status(201).json(newPlan);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to save plan' });
+    console.warn(err);
+    res.status(500).json({ error: 'Failed to save diet plan' });
   }
 };
 
@@ -66,10 +69,7 @@ exports.getUserPlans = async (req, res) => {
   try {
     const { userId } = req.params;
     const plans = await DietPlan.find({ userId }).sort({ date: -1 });
-    
-    // Return the most recent plan or empty object
-    const latestPlan = plans.length > 0 ? plans[0] : null;
-    res.json(latestPlan);
+    res.json(plans); // Return all plans, not just the latest
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Failed to fetch plans' });

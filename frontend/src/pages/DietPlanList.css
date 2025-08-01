@@ -1,0 +1,37 @@
+.diet-plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.diet-plan-item {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.plan-date {
+  font-weight: bold;
+  color: #2d7a2d;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.plan-suggestion {
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.plan-foods {
+  margin-top: 6px;
+  padding-left: 18px;
+  color: #555;
+}
+
+.no-plans {
+  color: #888;
+  font-style: italic;
+}

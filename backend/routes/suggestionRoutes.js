@@ -5,6 +5,7 @@ const {
   saveDietPlan,    // Fixed: was saveNutritionPlan
   getUserPlans     // Fixed: was getNutritionPlan
 } = require('../controllers/suggestionController');
+const suggestionController = require('../controllers/suggestionController'); // <-- Add this line
 
 // Accepts age, height, weight → returns suggestions
 router.get('/suggest-nutrition', suggestNutrition);
@@ -13,6 +14,6 @@ router.get('/suggest-nutrition', suggestNutrition);
 router.post('/newplan', saveDietPlan);  // Fixed function name
 
 // Gets saved plan by userId  
-router.get('/getsuggestion/:userId', getUserPlans);  // Fixed function name
+router.get('/getsuggestion/:userId', suggestionController.getUserPlans);
 
 module.exports = router;

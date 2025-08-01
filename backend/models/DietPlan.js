@@ -6,7 +6,7 @@ const FoodSchema = new mongoose.Schema({
 });
 
 const DietPlanSchema = new mongoose.Schema({
-  userId: String,
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   userName: String,
   age: Number,
   height: Number,
@@ -21,6 +21,6 @@ const DietPlanSchema = new mongoose.Schema({
   proteinNeeds: String,
   bmi: Number,
   date: { type: Date, default: Date.now }
-});
+}, { collection: 'dietplans' }); // Explicitly set collection name
 
 module.exports = mongoose.model('DietPlan', DietPlanSchema);

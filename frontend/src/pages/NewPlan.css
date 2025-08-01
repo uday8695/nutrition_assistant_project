@@ -1,0 +1,256 @@
+/* Navbar styles (match Dashboard/Profile) */
+.newplan-navbar {
+  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 2rem;
+}
+
+.newplan-navbar-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 8px #60a5fa44;
+}
+
+.newplan-navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.newplan-navbar-links a,
+.newplan-navbar-links button {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s, text-shadow 0.2s;
+  text-shadow: 1px 1px 8px #6366f144;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.newplan-navbar-links a:hover,
+.newplan-navbar-links button:hover {
+  color: #fbbf24;
+  background: #fff3;
+  text-shadow: none;
+}
+
+/* Main container */
+.newplan-main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.08);
+  padding: 2rem 2.5rem;
+  animation: fadeIn 0.8s;
+}
+
+/* Title and subtitle */
+.newplan-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #6366f1;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.newplan-subtitle {
+  color: #7f8c8d;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Navigation Buttons */
+.newplan-nav-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.newplan-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(99,102,241,0.12);
+  transition: background 0.2s, color 0.2s;
+}
+
+.newplan-btn:hover {
+  background: #fbbf24;
+  color: #6366f1;
+}
+
+/* Form styles */
+.newplan-form {
+  margin-bottom: 2rem;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(99,102,241,0.07);
+}
+
+.newplan-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #374151;
+}
+
+.newplan-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #6366f1;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f3f4f6;
+  transition: border-color 0.3s ease;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.newplan-input:focus {
+  border-color: #fbbf24;
+  outline: none;
+}
+
+.newplan-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(90deg, #28a745 0%, #60a5fa 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(99,102,241,0.10);
+}
+
+.newplan-submit-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Suggestion styles */
+.newplan-suggestion {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 8px 16px rgba(99,102,241,0.10);
+}
+
+.newplan-suggestion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.newplan-suggestion-box {
+  background-color: rgba(255,255,255,0.2);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.newplan-foods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+
+.newplan-food-box {
+  background-color: rgba(255,255,255,0.2);
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Saved plan styles */
+.newplan-savedplan {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #e8f5e8;
+  border-radius: 12px;
+  border: 2px solid #28a745;
+}
+
+.newplan-savedplan-title {
+  color: #155724;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.newplan-savedplan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.newplan-savedplan-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #17a2b8 0%, #60a5fa 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.newplan-savedplan-btn:hover {
+  background: #6366f1;
+  color: #fbbf24;
+}
+
+/* All plans section */
+.newplan-allplans {
+  margin-top: 2rem;
+}
+
+/* Fade-in animation for main container */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+  .newplan-main {
+    padding: 1rem;
+  }
+  .newplan-title {
+    font-size: 1.5rem;
+  }
+  .newplan-suggestion-grid,
+  .newplan-savedplan-grid {
+    grid-template-columns: 1fr;
+  }
+}
